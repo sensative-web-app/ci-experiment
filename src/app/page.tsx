@@ -16,6 +16,8 @@ export default async function Index() {
   let session = await getSession();
   const queryClient = new QueryClient();
 
+  throw new Error("Boom!");
+
   await queryClient.prefetchQuery({
     queryKey: ["nodes"],
     queryFn: () => fetchNodes(session.accessToken),
